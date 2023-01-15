@@ -5,6 +5,7 @@ const indexRouter = require('./routes/index');
 
 const moviesRoutes = require('./routes/moviesRoutes');
 const genresRoutes = require('./routes/genresRoutes');
+const port = 3001
 const app = express();
 
 // view engine setup
@@ -17,4 +18,4 @@ app.use('/', indexRouter);
 app.use(moviesRoutes);
 app.use(genresRoutes);
 
-app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001'));
+app.listen(port, () => console.log(`servidor corriendo en http://localhost:${port}`));

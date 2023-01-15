@@ -9,17 +9,30 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nombre: {
+      title: {
         type: Sequelize.STRING
       },
-      createdAt: {
-        allowNull: false,
+      rating: {
+        type: Sequelize.INTEGER
+      },
+      awards: {
+        type: Sequelize.INTEGER
+      },
+      release_date: {
         type: Sequelize.DATE
       },
-      updatedAt: {
+      length: {
+        type: Sequelize.STRING
+      },
+      genre_id: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Genres'
+          },
+          key: 'id'}
+        }
     });
   },
   async down(queryInterface, Sequelize) {
